@@ -1,0 +1,336 @@
+JQuery
+sự kiện mouse trong JQuery
+
+- click() nhấn và thả trên 1 phần tử
+- dblclick() nhấn nhanh 2 lần trên 1 pt
+- mousedown() xảy ra khi chuột được nhấn xuống
+- mouseup() sk xảy ra jgu chuột được thả ra
+- mousemove() sk xảy ra khi chuột được di chuyển trên 1 pt
+- mouseenter() khi chuột đi qua phần tử
+- mouseleave() khi chuột rời khỏi phần tử
+- mouseover() khi chuột di chuyển vào pt
+- mouseout() khi chuột di chuyển ra khỏi pt
+- contextmenu() chuột phải được nhấn trên 1 pt để hiển thị menu ngữ cảnh
+- mousewheel() khi chuột cuộn lên hoặc cuộn xuống
+
+sự kiện keyboard trong JQuery
+- keydown() sự kiện xảy ra khi 1 phím được nhấn xuống
+- keyup() xảy ra khi 1 phím được thả ra sau khi được nhấn xuống
+- keypress() xảy ra khi 1 phím được nhấn xuống và giữ trong 1 khoảng thời gian
+
+
+form event trong JQuery
+- input() xảy ra khi giá trị của 1 phần tử đầu vào thay đổi
+- focus() xảy ra khi 1 phần tử nhận focus
+- blur() xảy ra khi 1 phần tử mất focus
+- change() xảy ra khi giá trị của 1 phần tử thay đổi(input select textarea)
+- select() xảy ra khi 1 phần tử được chọn
+- submit() xảy ra khi 1 phần tử được nhấn submit
+- reset() xảy ra khi 1 form được đặt lại trạng thái ban đầu
+
+
+Window event trong JQuery
+- resize() xảy ra khi window thay đổi kích thước của trình duyệt
+- scroll() xảy ra khi thanh cuộn cửa sổ được cuộn
+- load() xảy ra khi tất cả nội dung của trang web được tải xong
+- unload() xảy ra khi trang web được đóng
+- beforeunload() xảy ra trước khi trang web được đóng
+
+
+Effect trong JQuery
+- hide(speech) / show(speech) 
+- toggle(speech) 
+- fadeIn() / fadeIn() / fadeToggle("slow" / 3000 -> speech)(in + out)
+- fadeTo(speech, độ mờ (1 -> 0))
+
+-slideDown(speech, callback) / slideUp() / slideToggle()
+
+-animate({
+    left: 100,
+    top: 100,...
+});
+
+- stop()
+
+
+jQuery HTML
+
+ ** GET + SET 
+- text("new text") để lấy nội dung hoặc đặt nội dung của pt
+
+- html("new tag html") để lấy nội dung và các thẻ html của phần tử đó
+
+- val() được sử dụng để lấy các giá trị của các pt hoặc set các value cho pt
+vd <input type="text" value="2"> $("input").val() ==> 2
+
+- attr() lấy hoặc đặt các giá trị của thuộc tính của phần tử
+
+- css(attribute , value) lấy hoặc đặt các giá trị của thuộc tính CSS của phần tử
+
+- prop() lấy hoặc đặt các giá trị của thuộc tính của phần tử(vd checked, disabled, selected)
+
+- hasClass("class name") kiểm tra phần tử có chứa 1 class không => true/false
+
+- is("name tag") kiểm tra các phần tử có phù hợp với bộ chọn cụ thể không => true/false
+
+- index() trả về chỉ mục của phần tử trong số tập các phần tử đc chọn cùng cấp 
+
+- length() trả về số lượng phần tử trong tập
+
+- eq(number) => trả về phần tử thứ i trong tập hợp các pt đc chọn
+
+
+
+** ADD  +  REMOVE
+- add() thêm phần tử mới vào tập các phần tử được chọn 
+vd $("#div1").add("#div2, #div3").css("background-color", "red");
+
+- addClass() thêm 1 hoặc nhiều class vào phần tử được chọn
+vd .class {background-color: yellow;}
+$("#div1").addClass("class");
+
+- appendTo() thêm các phần tử được chọn vào cuối phần tử mục tiêu
+<script>
+$("#myButton").click(function() {
+  $("<p>New paragraph</p>").appendTo("#container");
+});
+</script>
+
+- insertAfter() thêm các phần tử được chọn vào sau phần tử mục tiêu
+
+- insertBefore()  thêm các pt được chọn vào trước phần tử mục tiêu
+
+- prepend() thêm các phần tử được chọn vào đầu tập các phần tử  
+
+- prependTo()  thêm các phần tử được chọn vào đầu phần tử mục tiêu
+
+- remove() xóa các pt khỏi trang
+
+- removeClass() xóa 1 hoặc nhiều class khỏi phần tử
+
+- empty() xóa nội dung bên trong phần tử được chọn
+
+- toggleClass() chuyển đổi trạng thái class 
+<script>
+$("#myButton").click(function() {
+  $("#myDiv").toggleClass("highlight");
+});
+</script>
+
+
+- .before() / .after() 
+vd $(document).ready(function(){
+    $("#btn1").click(function(){
+      $("img").before("<b>Before</b>");
+    });
+  
+    $("#btn2").click(function(){
+      $("img").after("<i>After</i>");
+    });
+  });
+
+
+** jQuery Demension
+- width() trả về hoặc thiết lập chiều rộng phần tử
+
+- heigth() trả về hoặc thiết lập chiều cao của pt
+
+- innerWidth() trả về chiều rộng của phần tử tính cả padding
+
+- innerHeight() trả về chiều cao của phần tử tính cả padding
+
+- outerWidth() trả về chiều rộng của phần tử tính cả padding + border
+
+- outerHeight() trả về chiều cao của phần tử tính cả padding + border
+
+- outerWidth(true) trả về chiều rộng của phần tử tính cả padding + border + margin
+
+- outerHeight(true) trả về chiều cao của phần tử tính cả padding + border + margin
+
+- offset() trả về hoặc thiết lập vị trí tuyệt đối của phần tử
+
+- position() trả về hoặc thiết lập vị trí tương đối của phần tử trong phạm vị của pt change
+
+
+
+** Traversing trong JQuery
+
+- children() trả về tất cả các phần tử con trực tiếp trong pt đã chọn
+
+- find() trả về phần tử con phù hợp với bộ lọc
+$(document).ready(function(){
+    $("div").find("span.p1").css({"color": "red", "border": "2px solid red"});
+});
+
+- parent() trả về pt cha trực tiếp 
+
+- parents() trả về tất cả các pt cha 
+vd $("ul").parents("div").css("background-color", "red"); => chỉ định phần tử cha
+
+- siblings() trả về tất cả các phần tử anh em cùng cấp
+
+- parentsUntil() trả về các phần tử cha cho đến giới hạn của phần tử được chỉ định trong parentsUntil()
+vd $(selector).parentsUntil(stopSelector, filter);
+
+- next() trả về phần tử kế tiếp cùng cấp
+
+- nextAll() trả về tất cả các phần tử kế tiếp pt được chọn
+
+- nextUntil() trả về các phần tử kế tiếp cùng cấp cho đến khi gặp phần tử giới hạn
+vd $(selector).nextUntil(stopSelector, filter);
+
+- prev() trả về phần tử ngay trước cùng cấp
+
+- closet() tìm phần tử cha gần nhất phù hợp với bộ lọc
+
+- first() trả về phần tử đầu tiên trong tập các pt được chọn
+$(document).ready(function(){
+    $("div").first();
+});
+
+- last() trả về phần tử cuối cùng trong tập các pt được chọn
+
+- filter() lọc các phần tử từ 1 tập hợp được chọn từ bộ lọc
+
+- not() lọc các phần tử không được chọn từ bộ lọc
+vd $(document).ready(function(){
+    $("p").not(".intro");
+});
+
+
+** AJAX
+
+- load(URL, data, callback) 
+$(document).ready(function() {
+  $("#result").load("data.html", function(responseTxt, statusTxt, xhr) {
+    if (statusTxt == "success") {
+      console.log("Dữ liệu đã được tải thành công!");
+    } else if (statusTxt == "error") {
+      console.log("Đã xảy ra lỗi: " + xhr.status + " - " + xhr.statusText);
+    }
+  });
+});
+
+
+** AJAX - Object XMLHttpRequest
+Đối tượng XMLHttpRequesttượng có thể được sử dụng để trao đổi dữ liệu với máy chủ web ở hậu trường.
+Điều này có nghĩa là có thể cập nhật các phần của trang web mà không cần tải lại toàn bộ trang.
+
+Các phương thức trong đối tượng XMLHttpRequest
++ new XMLHttpRequest(); => tạo đối tượng mới
++ abort() => hủy bỏ 1 request đang được thực hiện, sẽ ngừng gửi yêu cầu và không chờ phản hồi từ máy chủ nữa
++ getAllResponseHeaders() => trả về tất cả các tiêu đề(headers) của phản hồi từ máy chủ sau khi yêu cầu AJAX hoàn thành
+...Header trong một yêu cầu AJAX có thể chứa các thông tin như User-Agent (xác định trình duyệt hoặc ứng dụng gửi yêu cầu), 
+Content-Type (kiểu nội dung của dữ liệu gửi đi), Authorization (thông tin xác thực), và nhiều thông tin khác tùy thuộc vào yêu cầu cụ thể.
+
+VD về headers:
+cache-control: no-cache, must-revalidate
+content-type: application/json; charset=utf-8
+date: Fri, 01 Jan 2022 12:34:56 GMT
+server: ExampleServer
+
++ getResponseHeader() => lấy giá trị của headers cụ thể trong phản hồi từ máy chủ sau khi yêu cầu AJAX hoàn thành
+VD:
+xhttp.onload = function() {
+  const contentType = xhttp.getResponseHeader("Content-Type");
+  console.log(contentType);
+}; => "application/json"
+
++ open(method, url, async, user, psw)
+trong đó:
+method: GET, POST, PUT, DELETE, HEAD, OPTIONS, TRACE, CONNECT
+url: địa chỉ của yêu cầu AJAX
+async: true/false xác định yêu cầu sẽ được gửi bất đồng bộ hay đồng bộ
+...Yêu cầu bất đồng bộ: Khi một yêu cầu được gửi bất đồng bộ, nghĩa là yêu cầu được gửi đi
+và trình duyệt hoặc ứng dụng tiếp tục thực hiện các công việc khác mà không chờ đợi phản hồi từ máy chủ
+...Yêu cầu đồng bộ: Khi một yêu cầu được gửi đồng bộ, nghĩa là trình duyệt hoặc ứng dụng chờ đợi phản hồi 
+từ máy chủ trước khi tiếp tục thực hiện các công việc khác
+user: username
+psw: password 
+
++ send() -> GET request, send(string) -> POST request, gửi yêu cầu đến máy chủ
+
++ setRequestHeader(header, value) => thiết lập các headers cho yêu cầu HTTP trước khi gửi đi
+VD: xhttp.setRequestHeader("Content-Type", "application/json");
+
+Các thuộc tính Object XMLHttpRequest 
++ onload() => được thực hiện sau khi yêu cầu HTTP hoàn thành và được nhận phản hồi từ máy chủ
+VD: 
+xhttp.onload = function() {
+  if (xhttp.status === 200) {
+    console.log("Yêu cầu thành công");
+    console.log(xhttp.responseText);
+  } else {
+    console.log("Yêu cầu không thành công");
+  }
+}
+
++ onreadystatechange() => sự kiện được kích hoạt mỗi khi trạng thái(ready State) của yêu cầu HTTP thay đổi
+VD:
+xhttp.onreadystatechange = function() {
+  if (xhttp.readyState === 4) {
+    if (xhttp.status === 200) {
+      console.log("Yêu cầu thành công");
+      console.log(xhttp.responseText);
+    } else {
+      console.log("Yêu cầu không thành công");
+    }
+  }
+};
+
++ readyState có 5 trạng thái
+... 0(UNSENT): trạng thái khởi tạo, đối tượng được khởi tạo nhưng open() chưa được gọi
+... 1(OPENED): open() đã được gọi và HTTP request được thiết lập nhưng send() chưa thực hiện
+... 2(HEADERS_RECEIVED): Yêu cầu đã được gửi và máy chủ đã trả về các tiêu đề phản hồi, nhưng phản hồi chưa được truy cập.
+... 3(LOADING): trạng thái đang tải, phần phản hồi đang được tải xuống
+... 4(DONE): trạng thái hoàn thành
+
++ responseText: chứa phần văn bản của phản hồi
+VD:
+const xhttp = new XMLHttpRequest();
+xhttp.open("GET", "https://api.example.com/data");
+xhttp.onreadystatechange = function() {
+  if (xhttp.readyState === 4 && xhttp.status === 200) {
+    console.log("Yêu cầu thành công");
+    console.log(xhttp.responseText);
+  }
+};
+xhttp.send();
+
++ status: 
+... 200: "OK"
+... 403: "Forbidden"
+... 404: "Not Found"
+
++ statusText: trả về status text: "OK", "NOT FOUND", "FORBIDDEN",...
+
+
+
+- $.ajax() đc sử dụng để thực hiện các yêu cầy AJAX đến máy chủ và xử lý các phản hồi
+
+- $.get() thực hiện yêu cầu GET AJAX đến máy chủ và phải hồi dưới dạng dữ liệu
+
+- $.post() thực hiện yêu cầu POST AJAX đến máy chủ và phải hồi dưới dạng dữ liệu
+
+- $.getJSON() thực hiện yêu cầu GET JSON AJAX đến máy chủ và phải hồi dưới dạng dữ liệu dưới dạng JSON
+
+- $.ajaxSetup() thiết lập các tùy chọn mặc định cho tất cả các yêu cầu AJAX
+
+- $.ajaxStart() đăng ký 1 chức năng xử lý để chạy khi bắt đầu 1 yêu cầu AJAX
+
+- $.ajaxStop() đăng ký một chức năng xử lý để chạy khi tất cả các yêu cầu AJAX đã hoàn thành.
+
+- $.ajaxError() đăng ký một chức năng xử lý khi yêu cầu AJAX có lỗi
+
+- $.ajaxSuccess() đăng ký một chức năng xử lý khi yêu cầu AJAX hoàn thành
+
+- $.ajaxComplete() đăng ký một chức năng xử lý khi yêu cầu AJAX đã hoàn thành bao gồm cả lỗi và thành công
+
+- $.ajaxPreFilter() đăng ký 1 bộ lọc cho các yêu cầu AJAX trước khi chúng được gửi đi
+
+
+
+
+
+
+
