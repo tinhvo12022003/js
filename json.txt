@@ -1,0 +1,31 @@
+** JSON
+- JSON.parse() chuyển đổi chuỗi json thành đối tượng trong js
+
+- JSON.stringify() chuyển đổi đối tượng js thành json
+
+vd đổi chuỗi json thành đối tượng js
+
+const jsonstr = '{"name" : "John", "age" : 30}';
+const jsonObj = JSON.parse(jsonstr);
+console.log(jsonObj.name); //output: "John"
+
+vd chuyển đổi đối tượng js thành json
+const jsonObj = {"name" : "John", "age" : 30};
+const jsonstr = JSON.stringify(jsonObj, null, 2);
+console.log(jsonstr); //output: {"name":"John","age":30}
+
+
+chuyển đổi json thành mảng
+const jsonstr = "["Ford, "BWM", "Honda"]';
+const jsonArr = JSON.parse(jsonStr);
+console.log(jsonArr[0]); //output: Ford
+
+
+chuyển đổi mảng thành chuỗi json
+const jsonArr = ["Orange", "Apple", "Banana"];
+const jsonStr = JSON.stringify(jsonArr);
+console.log(jsonStr); //output: ["Orange", "Apple", "Banana"]
+
+
+
+
