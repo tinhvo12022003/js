@@ -1,0 +1,11 @@
+- localStorage.clear() xóa tất cả dữ liệu trong localStorage
+
+- localStorage.setItem(key, value) thêm dữ liệu vào localStorage
+
+- localStorage.getItem(key) lấy dữ liệu từ localStorage
+
+- localStorage.removeItem(key) xóa key trong localStorage
+
+- localStorage.key(0) trích xuất khóa của chỉ mục được lưu trữ trong localStorage
+
+- localStorage.length() trích xuất lượng dữ liệu trong localStorage
